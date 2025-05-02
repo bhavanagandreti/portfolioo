@@ -1,0 +1,13 @@
+name: Set REPO_LINK Environment Variable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  set-repo-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set REPO_LINK environment variable
+        run: echo "REPO_LINK=https://github.com/${GITHUB_REPOSITORY}" >> $GITHUB_ENV
